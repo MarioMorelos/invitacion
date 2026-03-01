@@ -1,0 +1,379 @@
+@font-face {
+    font-family: 'MeaCulpa-Regular';
+    src: url(../assets/fonts/MeaCulpa-Regular.ttf) format('truetype');
+}
+
+body {
+  margin: 0;
+  font-family: serif;
+  overflow: hidden;
+}
+
+#intro {
+  position: fixed;
+  inset: 0;
+  background: #f8f5f2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.envelope {
+  position: relative;
+  width: 300px;
+  height: 200px;
+  background: #ffffff;
+  border: 2px solid #b11226;
+  cursor: pointer;
+  perspective: 1000px;
+}
+
+.flap {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #b11226;
+    transform-origin: top;
+    transition: transform 1s ease;
+    align-content: center;
+    text-align: center;
+    font-size: 2rem;
+    z-index: 1000;
+    color: white;
+}
+
+.letter {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #b11226;
+}
+
+.envelope.open .flap {
+  transform: rotateX(-180deg);
+}
+
+#contenido {
+  opacity: 0;
+  transition: opacity 1.5s ease;
+  text-align: center;
+}
+
+#contenido.visible {
+  opacity: 1;
+}
+
+.hidden {
+  display: none;
+}
+
+.text-principal {
+  font-family: 'Dancing Script', cursive;
+  font-size: 2rem;
+  color: #333;
+  /* margin-bottom: 20px; */
+  background-color: Beige;
+}
+.background-secundario {
+    background-color: #C42810;
+
+}
+.repetir {
+    width: 100%;                /* Ocupa todo el ancho */
+    height: 50px;              /* Alto del área */
+    background-image: url('../assets/img/line_principal.png'); /* Ruta de la imagen */
+    background-repeat: repeat-x; /* Repetir solo en horizontal */
+    background-position: top;   /* Posición inicial */
+    background-size: contain;    /* Ajustar el tamaño de la imagen */
+}
+.repetir_calaveras {
+    width: 100%;                /* Ocupa todo el ancho */
+    height: 50px;              /* Alto del área */
+    background-image: url('../assets/img/catrines.jpg'); /* Ruta de la imagen */
+    background-repeat: repeat-x; /* Repetir solo en horizontal */
+    background-position: top;   /* Posición inicial */
+    background-size: contain;    /* Ajustar el tamaño de la imagen */
+}
+.repetir_corazon {
+    width: 100%;                /* Ocupa todo el ancho */
+    height: 50px;              /* Alto del área */
+    background-image: url('../assets/img/corazon.png'); /* Ruta de la imagen */
+    background-repeat: repeat-x; /* Repetir solo en horizontal */
+    background-position: top;   /* Posición inicial */
+    background-size: contain;    /* Ajustar el tamaño de la imagen */
+}
+.principales {
+    font-size: 4.5rem;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    margin: 0;
+}
+.foto-pareja {
+    width: 80%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+.text-secundario {
+    font-family: 'MeaCulpa-Regular', serif;
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+.cuadro_fecha {
+    background-color: #FFF;
+    color: #C42810;
+    padding: 20px;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    width: 75%;
+    display: inline-block;
+}
+.dias {
+    font-size: 2rem;
+    color: #C42810;
+    text-align: center;
+}
+.horas {
+    font-size: 2rem;
+    color: #C42810;
+    text-align: center;
+}
+.minutos {
+    font-size: 2rem;
+    color: #C42810;
+    text-align: center;
+}
+.segundos {
+    font-size: 2rem;
+    color: #C42810;
+    text-align: center;
+}
+.w-falta {
+    width: 70%;
+}
+.faltan {
+    font-size: 2.5rem;
+    font-family: 'MeaCulpa-Regular';
+    margin-top: 15px;
+}
+/* Month header */
+.month {
+  padding: 0px 15px;
+  width: 100%;
+  background: #7b0b1f;
+  text-align: center;
+}
+
+/* Month list */
+.month ul {
+  margin: 0;
+  padding: 0;
+}
+
+.month ul li {
+  color: white;
+  font-size: 20px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+/* Previous button inside month header */
+.month .prev {
+  float: left;
+  padding-top: 10px;
+}
+
+/* Next button */
+.month .next {
+  float: right;
+  padding-top: 10px;
+}
+
+/* Weekdays (Mon-Sun) */
+.weekdays {
+  margin: 0;
+  padding: 5px 0;
+  background-color:#ddd;
+}
+
+.weekdays li {
+  display: inline-block;
+  width: 11.6%;
+  color: #666;
+  text-align: center;
+}
+
+/* Days (1-31) */
+.days {
+  padding: 0;
+  background: #eee;
+  margin: 0;
+}
+
+.days li {
+  list-style-type: none;
+  display: inline-block;
+  width: 11.6%;
+  text-align: center;
+  margin-bottom: 5px;
+  font-size:12px;
+  color: #777;
+}
+
+/* Highlight the "current" day */
+.days li .active {
+  padding: 7px;
+  border-radius: 10px;
+  background: #7b0b1f;
+  color: white !important
+}
+.mapa {
+    width: 80%;
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    padding: 1rem 0 2rem 0;
+}
+.location {
+    margin-top: 1rem;
+}
+.img_foto1 {
+    background-image: url(../assets/img/foto2.jpeg);
+    background-size: contain;
+    background-position: center;
+    width: 80%;
+    height: 214px;
+    border-radius: 0;
+    margin: 0 auto;
+}
+.foto-vestimenta {
+    height: 60%;
+    max-width: 100%;
+    margin-bottom: 1rem;
+}
+a.button-ejemplo {
+    background-color: green;
+    padding: 6px 35px;
+    border-radius: 15px;
+    margin-top: 1rem;
+    text-decoration: none;
+    color: white;
+}
+.foto-pedida {
+    width: 100%;
+    height: auto;
+}
+.nombres-personas {
+    list-style-type: none;
+    padding: 0;
+    font-size: 1.5rem;
+}
+.text-complemento {
+    font-size: 1.5rem;
+}
+.text-ubicacion {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+.text-menciones {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+.personas-importantes {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+img.foto-regalo {
+    width: 50%;
+    border-radius: 50%;
+    margin: auto;
+    margin-bottom: 1rem;
+    border: 2px solid blue;
+}
+.btn-regalo {
+    width: 226px;
+    margin: auto;
+    background: white;
+    padding: 7px 40px;
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: #333;
+    margin-bottom: 2rem;
+}
+#music-btn {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  border: 1px solid #b11226; /* rojo rosa elegante */
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(6px);
+  font-size: 18px;
+  color: #b11226;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  z-index: 999;
+}
+
+#music-btn:hover {
+  transform: scale(1.1);
+}
+
+#music-btn.playing {
+  animation: pulse 1.8s infinite;
+}
+
+.btn-confirma {
+    font-size: 1.5rem;
+    background-color: green;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 7px 16px;
+}
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(177, 18, 38, 0.4); }
+  70% { box-shadow: 0 0 0 10px rgba(177, 18, 38, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(177, 18, 38, 0); }
+}
+@media screen and (max-width: 727px) {
+    .cuadro_fecha {
+        background-color: #FFF;
+        color: #C42810;
+        padding: 20px 1px;
+        border-radius: 10px;
+        font-size: 0.8rem;
+        margin-bottom: 20px;
+        width: 100%;
+        display: inline-block;
+        text-align: center;
+    }
+    .w-falta {
+        width: 100%;
+    }
+    .foto-vestimenta {
+        height: 40%;
+    }
+    a.button-ejemplo {
+        padding: 4px 15px;
+    }
+}

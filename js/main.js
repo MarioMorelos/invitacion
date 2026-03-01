@@ -2,8 +2,6 @@ const params = new URLSearchParams(window.location.search);
 const name = atob(params.get("n"));
 const age = atob(params.get("i"));
 
-// console.log(`Name: ${name}, Age: ${age}`);
-
 document.getElementById("name").innerHTML = name;
 document.getElementById("num_invitados").innerHTML = age + " invitados";
 
@@ -19,8 +17,6 @@ setInterval(() => {
   const minutes = Math.floor(distance % (1000 * 60 * 60) / (1000 * 60));
   const seconds = Math.floor(distance % (1000 * 60) / 1000);
 
-  // document.getElementById("timer").innerHTML =
-  //   days + " días, " + hours + " horas, " + minutes + " minutos y " + seconds + " segundos restantes";
   document.getElementById("dias").innerHTML = days;
   document.getElementById("horas").innerHTML = hours;
   document.getElementById("minutos").innerHTML = minutes;
@@ -72,8 +68,9 @@ envelope.addEventListener("click", () => {
 
 
 function enviarWhatsApp() {
-  const nombre = "Mario";
-  const mensaje = `Hola, soy ${nombre}. Confirmo mi asistencia a la boda.`;
-  const url = `https://wa.me/525516503708?text=${encodeURIComponent(mensaje)}`;
+  let name = atob(params.get("n"));
+  let tel = atob(params.get("t"));
+  const mensaje = `Hola, soy ${name}. Confirmo mi asistencia a la boda.`;
+  const url = `https://wa.me/5255${tel}?text=${encodeURIComponent(mensaje)}`;
   window.open(url, "_blank");
 }

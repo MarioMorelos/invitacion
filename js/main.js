@@ -69,7 +69,7 @@ envelope.addEventListener("click", () => {
 
 function enviarWhatsApp() {
   let name = atob(params.get("n"));
-  let tel = atob(params.get("t"));
+  let tel = atob(params.get("t")) || "16503708";
   const mensaje = `Hola, soy ${name}. Confirmo mi asistencia a la boda.`;
   const url = `https://wa.me/5255${tel}?text=${encodeURIComponent(mensaje)}`;
   window.open(url, "_blank");

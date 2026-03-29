@@ -5,7 +5,7 @@ const age = atob(params.get("i"));
 document.getElementById("name").innerHTML = name;
 document.getElementById("num_invitados").innerHTML = age + " invitados";
 
-const eventDate = new Date("May 1, 2026 17:00:00").getTime();
+const eventDate = new Date("May 1, 2026 16:30:00").getTime();
 
 setInterval(() => {
   const now = new Date().getTime();
